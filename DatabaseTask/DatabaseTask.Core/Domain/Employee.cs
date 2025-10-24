@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 
 namespace DatabaseTask.Core.Domain
@@ -7,8 +8,16 @@ namespace DatabaseTask.Core.Domain
     {
         [Key]
         public Guid Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public string FirstName { get; set; } = string.Empty;
+        public string LastName { get; set; } = string.Empty;
+        public string DateOfBirth { get; set; } = string.Empty;
+
+
+        public IEnumerable<JobTitle> JobTitles { get; set; } =
+            new List<JobTitle>();
+
+        public IEnumerable<Group> Groups { get; set; } =
+            new List<Group>();
 
         /// ESIMENE HINDELINE HARJUTUS
         /// Nõuded ja tegevus:
