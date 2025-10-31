@@ -18,7 +18,7 @@ namespace DatabaseTask.Core.Domain
 
         public string Area { get; set; } = string.Empty;
 
-        public string ProjectType { get; set; }
+        public string ProjectType { get; set; } = string.Empty;
 
         public IEnumerable<Machine> MachineId { get; set; }
             = new List<Machine>();
